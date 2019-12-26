@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animated.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<!--Sprite -->
+<svg style="display: none">
+<symbol id="twitter" viewBox="0 -47 512.00203 512">
+    <g>
+        <path d="m191.011719 419.042969c-22.140625 0-44.929688-1.792969-67.855469-5.386719-40.378906-6.335938-81.253906-27.457031-92.820312-33.78125l-30.335938-16.585938 32.84375-10.800781c35.902344-11.804687 57.742188-19.128906 84.777344-30.597656-27.070313-13.109375-47.933594-36.691406-57.976563-67.175781l-7.640625-23.195313 6.265625.957031c-5.941406-5.988281-10.632812-12.066406-14.269531-17.59375-12.933594-19.644531-19.78125-43.648437-18.324219-64.21875l1.4375-20.246093 12.121094 4.695312c-5.113281-9.65625-8.808594-19.96875-10.980469-30.777343-5.292968-26.359376-.863281-54.363282 12.476563-78.851563l10.558593-19.382813 14.121094 16.960938c44.660156 53.648438 101.226563 85.472656 168.363282 94.789062-2.742188-18.902343-.6875-37.144531 6.113281-53.496093 7.917969-19.039063 22.003906-35.183594 40.722656-46.691407 20.789063-12.777343 46-18.96875 70.988281-17.433593 26.511719 1.628906 50.582032 11.5625 69.699219 28.746093 9.335937-2.425781 16.214844-5.015624 25.511719-8.515624 5.59375-2.105469 11.9375-4.496094 19.875-7.230469l29.25-10.078125-19.074219 54.476562c1.257813-.105468 2.554687-.195312 3.910156-.253906l31.234375-1.414062-18.460937 25.230468c-1.058594 1.445313-1.328125 1.855469-1.703125 2.421875-1.488282 2.242188-3.339844 5.03125-28.679688 38.867188-6.34375 8.472656-9.511718 19.507812-8.921875 31.078125 2.246094 43.96875-3.148437 83.75-16.042969 118.234375-12.195312 32.625-31.09375 60.617187-56.164062 83.199219-31.023438 27.9375-70.582031 47.066406-117.582031 56.847656-23.054688 4.796875-47.8125 7.203125-73.4375 7.203125zm0 0"/>
+    </g>
+</symbol>
+<symbol id="facebook" viewBox="0 0 470.513 470.513">
+    <g>
+        <path d="M271.521,154.17v-40.541c0-6.086,0.28-10.8,0.849-14.13c0.567-3.335,1.857-6.615,3.859-9.853
+		c1.999-3.236,5.236-5.47,9.706-6.708c4.476-1.24,10.424-1.858,17.85-1.858h40.539V0h-64.809c-37.5,0-64.433,8.897-80.803,26.691
+		c-16.368,17.798-24.551,44.014-24.551,78.658v48.82h-48.542v81.086h48.539v235.256h97.362V235.256h64.805l8.566-81.086H271.521z"/>
+    </g>
+</symbol>
+<symbol id="google" viewBox="0 0 96.828 96.827">
+    <g>
+        <path d="M62.617,0H39.525c-10.29,0-17.413,2.256-23.824,7.552c-5.042,4.35-8.051,10.672-8.051,16.912
+			c0,9.614,7.33,19.831,20.913,19.831c1.306,0,2.752-0.134,4.028-0.253l-0.188,0.457c-0.546,1.308-1.063,2.542-1.063,4.468
+			c0,3.75,1.809,6.063,3.558,8.298l0.22,0.283l-0.391,0.027c-5.609,0.384-16.049,1.1-23.675,5.787
+			c-9.007,5.355-9.707,13.145-9.707,15.404c0,8.988,8.376,18.06,27.09,18.06c21.76,0,33.146-12.005,33.146-23.863
+			c0.002-8.771-5.141-13.101-10.6-17.698l-4.605-3.582c-1.423-1.179-3.195-2.646-3.195-5.364c0-2.672,1.772-4.436,3.336-5.992
+			l0.163-0.165c4.973-3.917,10.609-8.358,10.609-17.964c0-9.658-6.035-14.649-8.937-17.048h7.663c0.094,0,0.188-0.026,0.266-0.077
+			l6.601-4.15c0.188-0.119,0.276-0.348,0.214-0.562C63.037,0.147,62.839,0,62.617,0z M34.614,91.535
+			c-13.264,0-22.176-6.195-22.176-15.416c0-6.021,3.645-10.396,10.824-12.997c5.749-1.935,13.17-2.031,13.244-2.031
+			c1.257,0,1.889,0,2.893,0.126c9.281,6.605,13.743,10.073,13.743,16.678C53.141,86.309,46.041,91.535,34.614,91.535z
+			 M34.489,40.756c-11.132,0-15.752-14.633-15.752-22.468c0-3.984,0.906-7.042,2.77-9.351c2.023-2.531,5.487-4.166,8.825-4.166
+			c10.221,0,15.873,13.738,15.873,23.233c0,1.498,0,6.055-3.148,9.22C40.94,39.337,37.497,40.756,34.489,40.756z"/>
+        <path d="M94.982,45.223H82.814V33.098c0-0.276-0.225-0.5-0.5-0.5H77.08c-0.276,0-0.5,0.224-0.5,0.5v12.125H64.473
+			c-0.276,0-0.5,0.224-0.5,0.5v5.304c0,0.275,0.224,0.5,0.5,0.5H76.58V63.73c0,0.275,0.224,0.5,0.5,0.5h5.234
+			c0.275,0,0.5-0.225,0.5-0.5V51.525h12.168c0.276,0,0.5-0.223,0.5-0.5v-5.302C95.482,45.446,95.259,45.223,94.982,45.223z"/>
+    </g>
+</symbol>
+<symbol id="basketball" viewBox="0 0 512 512">
+    <g>
+        <path d="m437.019 74.981c-48.352-48.352-112.639-74.981-181.019-74.981s-132.667 26.629-181.019 74.981-74.981 112.639-74.981 181.019 26.629 132.667 74.981 181.019 112.639 74.981 181.019 74.981 132.667-26.629 181.019-74.981 74.981-112.639 74.981-181.019-26.629-132.667-74.981-181.019zm58.476 154.011c-69.029-2.888-136.133 22.118-186.38 69.517l-42.509-42.509 165.02-165.02c36.006 38.262 58.14 86.311 63.869 138.012zm-196.986 80.123c-47.398 50.247-72.404 117.349-69.517 186.38-51.701-5.729-99.75-27.863-138.011-63.869l165.019-165.02zm-42.509-63.721-42.509-42.509c47.398-50.247 72.404-117.349 69.517-186.38 51.701 5.729 99.75 27.863 138.011 63.869zm11.955-230.104c3.237 65.49-20.232 129.266-65.078 176.98l-111.896-111.896c44.852-42.209 103.152-65.374 165.019-65.374 4.001 0 7.987.098 11.955.29zm-251.449 267.731c3.639.154 7.275.238 10.905.238 25.084 0 49.907-3.665 74.03-10.945 3.965-1.197 6.21-5.382 5.013-9.347-1.197-3.966-5.382-6.208-9.347-5.013-26.588 8.025-54.079 11.375-81.817 9.995-.192-3.967-.29-7.95-.29-11.949 0-61.867 23.165-120.167 65.374-165.02l111.896 111.896c-20.011 18.826-42.808 33.948-67.881 44.98-3.792 1.668-5.513 6.094-3.844 9.885 1.236 2.809 3.985 4.481 6.869 4.481 1.009 0 2.034-.205 3.017-.637 26.781-11.784 51.117-27.953 72.452-48.097l42.511 42.512-165.02 165.02c-36.003-38.259-58.136-86.303-63.868-137.999zm227.539 213.689c-3.237-65.49 20.232-129.266 65.078-176.98l111.896 111.896c-44.852 42.209-103.152 65.374-165.019 65.374-4.001 0-7.987-.098-11.955-.29zm187.581-75.69-111.897-111.897c47.715-44.845 111.493-68.309 176.98-65.078.193 3.969.291 7.955.291 11.955 0 61.867-23.165 120.167-65.374 165.02z"/>
+    </g>
+</symbol>
+</svg>
+
+
+<!--HEADER -->
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo__inner">
+                <div class="header__logo animated  slideInLeft delay-1s">Brandi</div>
+                <div class="header__text">I’am your tag line</div>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav__link">Home</a>
+                <a href="#" class="nav__link">Features</a>
+                <a href="#" class="nav__link">Works</a>
+                <a href="#" class="nav__link">Team</a>
+                <a href="#" class="nav__link">Contact</a>
+            </nav>
+        </div>
+    </div> <!-- /.container-->
+</header>
+
+<!--Intro-->
+
+<div class="intro">
+    <div class="container">
+        <div class="intro__inner">
+            <div class="intro__title animated pulse infinite delay-2s ">Meet <span>Brandi</span>!</div>
+            <div class="intro__subtitle"><span>/creative</span> one page template.</div>
+            <div class="intro__text">We are a team of professionals</div>
+            <div class="social">
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                    <use xlink:href="#twitter"></use>
+                </svg>
+                </a>
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#facebook"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#google"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#" target="_blank">
+                    <svg class="social__icon">
+                        <use xlink:href="#basketball"></use>
+                    </svg>
+                </a>
+
+
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.Intro-->
+
+
+<!-- FEatures -->
+
+<div class="features">
+    <div class="container">
+        <div class="title__inner">
+            <div class="title__head">Features</div>
+            <div class="title__photo">
+                <div class="title__img"><img src="images/header__inner/1.png" alt="heart"></div>
+            </div>
+            </div>
+        <div class="features__inner">
+            <div class="features__item wow zoomInLeft" data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+                <div class="features__photo__inner">
+                    <img class="features__photo" src="images/features/1.png" alt="">
+                </div>
+                <div class="features__title">Branding</div>
+                <div class="features__text">Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore</div>
+            </div>
+            <div class="features__item wow zoomInDown" data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+                <div class="features__photo__inner">
+                    <img class="features__photo" src="images/features/2.png" alt="">
+                </div>
+                <div class="features__title">Development</div>
+                <div class="features__text">Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore</div>
+            </div>
+            <div class="features__item wow zoomInRight" data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+                <div class="features__photo__inner">
+                    <img class="features__photo" src="images/features/3.png" alt="">
+                </div>
+                <div class="features__title">Consulting</div>
+                <div class="features__text">Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore</div>
+            </div>
+        </div>  <!-- ./features__inner-->
+    </div> <!-- /.container -->
+</div> <!-- /.Features -->
+
+<!--WORKS -->
+
+<div class="works">
+    <div class="container">
+        <div class="title__inner">
+            <div class="title__head">Works</div>
+            <div class="title__photo">
+                <div class="title__img"><img src="images/header__inner/1.png" alt="heart"></div>
+            </div>
+            <div class="title__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</div>
+        </div>
+        <div class="works__menu animated jackInTheBox">
+            <a href="#" class="menu__link ">All</a>
+            <a href="#" class="menu__link">Branding</a>
+            <a href="#" class="menu__link">Web</a>
+            <a href="#" class="menu__link">Logo Design</a>
+            <a href="#" class="menu__link">Photography</a>
+        </div>
+    </div>
+    <div class="works__inner">
+        <div class="works__item wow slideInDown"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+                <img src="images/works/1.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+        <div class="works__item wow slideInDown"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+            <img src="images/works/2.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+
+        <div class="works__item wow slideInDown"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+            <img src="images/works/3.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+
+        <div class="works__item wow slideInDown"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+            <img src="images/works/4.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+
+        <div class="works__item wow slideInUp"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+            <img src="images/works/5.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+        <div class="works__item wow slideInUp"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+            <img src="images/works/6.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+
+        <div class="works__item wow slideInUp"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+            <img src="images/works/7.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+
+        <div class="works__item wow slideInUp"  data-wow-duration="2s" data-wow-delay="1s" data-wow-offset="70">
+            <img src="images/works/8.jpg" alt="">
+            <div class="works__layer">
+                <div class="works__layer__photo">
+                    <img src="images/works/layer.png" alt="">
+                </div>
+                <div class="works__layer__title">Labore et dolore magnam</div>
+                <div class="works__layer__text">Photography</div>
+            </div>
+        </div>
+
+    </div> <!-- /.works__inner -->
+</div> <!-- works -->
+
+<!-- TEAM -->
+
+<div class="team">
+    <div class="container">
+        <div class="title__inner">
+            <div class="title__head">Meet Our Team</div>
+            <div class="title__photo">
+                <div class="title__img"><img src="images/header__inner/1.png" alt="heart"></div>
+            </div>
+            <div class="title__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</div>
+        </div>
+        <div class="team__inner">
+            <div class="team__item">
+            <img class="team__photo" src="images/team/1.jpg" alt="team">
+            <div class="team__content">
+                <div class="team_title">Nemo enim ipsam
+                    voluptatem quia voluptas </div>
+                <div class="team__text">sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</div>
+                <div class="social">
+                    <a class="social__item social--team" href="#" target="_blank">
+                        <svg class="social__icon social__icon--team">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item social--team" href="#" target="_blank">
+                        <svg class="social__icon social__icon--team">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item social--team" href="#" target="_blank">
+                        <svg class="social__icon social__icon--team ">
+                            <use xlink:href="#google"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="team__name">John Filmr Doe</div>
+            <div class="team__prof">Managing Director</div>
+            </div>
+
+            <div class="team__item">
+                <img class="team__photo" src="images/team/02.jpg" alt="team">
+                <div class="team__content">
+                    <div class="team_title">Nemo enim ipsam
+                        voluptatem quia voluptas </div>
+                    <div class="team__text">sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</div>
+                    <div class="social">
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team ">
+                                <use xlink:href="#google"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="team__name">Chystine Hineu</div>
+                <div class="team__prof">Lead Designer</div>
+            </div>
+
+            <div class="team__item">
+                <img class="team__photo" src="images/team/03.jpg" alt="team">
+                <div class="team__content">
+                    <div class="team_title">Nemo enim ipsam
+                        voluptatem quia voluptas </div>
+                    <div class="team__text">sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</div>
+                    <div class="social">
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team ">
+                                <use xlink:href="#google"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="team__name">Martin Matrone</div>
+                <div class="team__prof">Lead Developer</div>
+            </div>
+
+            <div class="team__item">
+                <img class="team__photo" src="images/team/4.jpg" alt="team">
+                <div class="team__content">
+                    <div class="team_title">Nemo enim ipsam
+                        voluptatem quia voluptas </div>
+                    <div class="team__text">sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</div>
+                    <div class="social">
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item social--team" href="#" target="_blank">
+                            <svg class="social__icon social__icon--team ">
+                                <use xlink:href="#google"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="team__name">Steve Flaulkin</div>
+                <div class="team__prof">Sr. UI Designer</div>
+            </div>
+
+        </div>
+    </div> <!--/.container -->
+</div> <!-- /.team -->
+
+<!-- FActs -->
+
+<div class="facts">
+    <div class="container">
+        <div class="title__inner">
+            <div class="title__head">Some fun facts</div>
+            <div class="title__photo">
+                <div class="title__img"><img src="images/header__inner/1.png" alt="heart"></div>
+            </div>
+        </div>
+        <div class="facts__inner">
+            <div class="facts__item">
+                <img src="" alt="">
+                <div class="facts__number"></div>
+                <div class="facts__text"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
